@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xrandr --output eDP-1 --auto --pos 2560x360 --output DP-1 --auto --pos 0x0

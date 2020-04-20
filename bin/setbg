@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xwallpaper --output eDP-1 --zoom ~/.local/share/wallsm --output DP-1 --zoom ~/.local/share/wallbig
