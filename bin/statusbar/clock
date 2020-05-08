@@ -3,5 +3,5 @@
 date '+%Y %b %d (%a) %I:%M%p'
 
 case $BLOCK_BUTTON in
-	1) notify-send "This month" "$(cal)"
+	1) notify-send "This month" "$(ncal)"
 esac

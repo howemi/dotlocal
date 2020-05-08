@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# current=$("pacmd list-sinks | grep '*' | awk '{print $3}'")
+
+dest=$(pacmd list-sinks | grep 'index\|name: <' | sed 's/[\t ]//g' | sed 'N;s/\n/ /' | dmenu -i -p 'Select audio device:' | awk '{print $1}' | sed -r 's/\**\w+://g')
+
+pacmd set-default-sink $dest
+
+numCurrent=$(pacmd list-sink-inputs | grep 'sink\(s\) available' | awk '{print $1}')
+
+[ $numCurrent -e 0 ] && exit
+
+for i in $(pacmd list-sink-inputs | grep index | awk '{print $2}')
+do
+	pacmd move-sink-input $i $dest
+done

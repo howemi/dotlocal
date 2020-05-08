@@ -1,0 +1,4 @@
+#!/bin/sh
+
+read -p "save file as: " location
+ffmpeg -video_size 2560x1440 -framerate 25 -f x11grab -i :0.0 $location.mp4
