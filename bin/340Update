@@ -1,0 +1,17 @@
+#!/bin/bash
+arr=(
+        "twitteur_getfollowing"
+        "twitteur_getfollowers"
+        "twitteur_getstory"
+        "twitteur_getfeed"
+        "twitteur_follow"
+        "twitteur_share"
+        "twitteur_signup"
+        "twitteur_lookup"
+        "twitteur_login"
+        "twitteur_logout"
+    )
+for func in "${arr[@]}"
+do
+  aws lambda update-function-code --function-name $func --zip-file fileb:///home/mike/340/twitteur/server/build/libs/server-all.jar &
+done
