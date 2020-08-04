@@ -10,6 +10,8 @@ arr=(
         "twitteur_lookup"
         "twitteur_login"
         "twitteur_logout"
+        "twitteur_queue_post_update_feed_messages"
+        "twitteur_queue_update_feeds"
     )
 for func in "${arr[@]}"
 do
