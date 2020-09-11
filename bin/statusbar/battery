@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo $(cat /sys/class/power_supply/BAT1/capacity)%
+echo " " $(cat /sys/class/power_supply/BAT1/capacity)%" "
 
 case $BLOCK_BUTTON in
     1) notify-send "$(upower -i $(upower -e | grep BAT) | grep --color=never -E 'state|to\ full|to\ empty|percentage')"
