@@ -1,0 +1,2 @@
+#!/bin/sh
+whois $1 | grep -i "expiry\|domain name:\|creation date:\|updated date:\|domain not found\|registrar:"
